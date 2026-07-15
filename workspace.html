@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Momentum AI — Revenue command center</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="extensions.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="site.html" aria-label="Momentum home"><span class="brand-mark"><i></i><i></i><i></i></span><span>momentum</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="overview"><span>◫</span>Overview</button>
+        <button class="nav-item" data-view="accounts"><span>◎</span>Accounts <b>24</b></button>
+        <button class="nav-item" data-view="tasks"><span>✓</span>Task queue <b>4</b></button>
+        <button class="nav-item" data-view="dialer"><span>◌</span>Dialer</button>
+        <button class="nav-item" data-view="workflows"><span>⌘</span>Workflows</button>
+        <button class="nav-item" data-view="insights"><span>✦</span>Conversation intelligence</button>
+        <button class="nav-item" data-view="analytics"><span>◒</span>Analytics</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item"><span>⚙</span>Settings</button>
+        <div class="user-chip"><span class="avatar">AM</span><span><strong>Alex Morgan</strong><small>Revenue team</small></span><span class="chev">⌄</span></div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <div class="crumb"><span id="view-kicker">Revenue intelligence</span><h1 id="page-title">Good morning, Alex <span class="spark">✦</span></h1></div>
+        <div class="top-actions"><button class="icon-btn" aria-label="Search">⌕</button><button class="icon-btn notification" aria-label="Notifications">♧<i></i></button><button class="primary-btn" id="compose-open">Create outreach <span>↗</span></button></div>
+      </header>
+      <section id="overview-view" class="view active-view">
+        <div class="hero-copy"><p>Here’s what will move your pipeline today.</p><div class="date-filter">This week <span>⌄</span></div></div>
+        <section class="metric-grid" id="metrics"></section>
+        <section class="dashboard-grid">
+          <article class="panel focus-panel"><div class="panel-heading"><div><span class="eyebrow">MOMENTUM FOCUS</span><h2>Make the right move</h2></div><button class="ghost-btn" id="view-account">Open account <span>→</span></button></div><div class="focus-body"><div class="score-ring"><div><strong>86</strong><small>intent score</small></div></div><div class="focus-content"><div class="account-label"><span class="account-logo blue">NH</span><strong>Northstar Health</strong><span class="stage">Evaluation</span></div><h3>Northstar Health is ready for a point of view</h3><p>Three stakeholders engaged with pricing this week. Their VP of Operations mentioned a September rollout target in yesterday’s call.</p><div class="tag-row"><span>↗ 3 buying signals</span><span>● High fit</span><span>◷ Next step overdue</span></div><div class="focus-actions"><button class="dark-btn" id="draft-email">Draft with AI <span>✦</span></button><button class="plain-btn" id="listen-call">View call insight</button></div></div></div></article>
+          <article class="panel pipeline-panel"><div class="panel-heading"><div><span class="eyebrow">PIPELINE HEALTH</span><h2>Signal-rich opportunities</h2></div><button class="more-btn">•••</button></div><div class="pipeline-total"><strong>$824k</strong><span>qualified pipeline</span><em>+12.4%</em></div><div class="chart-wrap"><svg viewBox="0 0 480 165" preserveAspectRatio="none" role="img" aria-label="Pipeline trend chart"><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e72e9" stop-opacity=".30"/><stop offset="1" stop-color="#8e72e9" stop-opacity="0"/></linearGradient></defs><path class="gridline" d="M0 135 H480 M0 87 H480 M0 40 H480"/><path class="area" d="M0,133 C37,122 47,115 76,119 S123,91 149,102 S196,97 228,73 S271,88 301,65 S355,67 382,42 S423,61 480,18 L480,165 L0,165Z"/><path class="line" d="M0,133 C37,122 47,115 76,119 S123,91 149,102 S196,97 228,73 S271,88 301,65 S355,67 382,42 S423,61 480,18"/></svg><div class="x-axis"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Today</span></div></div></article>
+        </section>
+        <section class="lower-grid"><article class="panel task-panel"><div class="panel-heading"><div><span class="eyebrow">PRIORITY QUEUE</span><h2>Your next best actions</h2></div><button class="ghost-btn" data-view-target="accounts">See all <span>→</span></button></div><div id="task-list" class="task-list"></div></article><article class="panel activity-panel"><div class="panel-heading"><div><span class="eyebrow">LIVE FEED</span><h2>Revenue signals</h2></div><span class="live-dot">Live</span></div><div id="activity-list" class="activity-list"></div></article></section>
+      </section>
+      <section id="accounts-view" class="view"><div class="section-heading"><div><p class="eyebrow">ACCOUNT COMMAND CENTER</p><h2>Focus your selling time</h2><p>Ranked by real-time engagement, fit, and deal risk.</p></div><button class="outline-btn" id="filter-accounts">Filter <span>⌄</span></button></div><div class="account-table panel"><div class="table-head"><span>Account</span><span>Stage</span><span>Opportunity</span><span>Intent</span><span>Signals</span><span></span></div><div id="accounts-list"></div></div></section>
+      <section id="tasks-view" class="view"><div class="section-heading"><div><p class="eyebrow">AI TASKER</p><h2>Actions prioritized by customer signal</h2><p>Work the actions most likely to advance an opportunity.</p></div><button class="outline-btn" id="task-filter">Open tasks <span>⌄</span></button></div><div class="task-workspace"><aside class="panel task-summary"><span class="eyebrow">TODAY'S FOCUS</span><strong id="open-task-count">4</strong><p>actions are ready for review</p><div class="priority-meter"><span><i></i></span><small>2 high priority</small></div><hr><h3>How prioritization works</h3><p class="small-copy">Fit, engagement, deal stage, and recency are combined into an explainable task score.</p></aside><div class="panel task-board"><div class="board-head"><span>Recommended action</span><span>Priority</span><span>Due</span><span></span></div><div id="full-task-list"></div></div></div></section>
+      <section id="dialer-view" class="view"><div class="section-heading"><div><p class="eyebrow">CONNECTED CALLING</p><h2>Have the right conversation</h2><p>Guided call preparation using account and conversation context.</p></div><span class="call-status"><i></i> Dialer connected</span></div><div class="dialer-layout"><article class="panel dialer-card"><span class="eyebrow">NEXT CALL</span><div id="call-card"></div></article><article class="panel call-notes"><span class="eyebrow">LIVE CALL NOTES</span><h3>Conversation guide</h3><div class="guide-step"><span>1</span><p>Start with the buyer priority, not the product.</p></div><div class="guide-step"><span>2</span><p>Ask what changed after the demo follow-up.</p></div><div class="guide-step"><span>3</span><p>Confirm the executive evaluation process.</p></div><label>Notes<textarea id="call-note" placeholder="Capture key decision criteria, objections, and next steps…"></textarea></label><button class="outline-btn wide" id="save-call-note">Save note</button></article></div></section>
+      <section id="workflows-view" class="view"><div class="section-heading"><div><p class="eyebrow">REVENUE AUTOMATION</p><h2>Workflows that act on signals</h2><p>Turn customer activity into thoughtful, repeatable execution.</p></div><button class="primary-btn" id="new-workflow">New workflow <span>+</span></button></div><div class="workflow-layout"><div class="workflow-list panel" id="workflow-list"></div><aside class="builder panel"><span class="eyebrow">WORKFLOW MAP</span><h3>High-intent account follow-up</h3><div class="flow-step trigger"><span>◉</span><div><small>WHEN</small><strong>Intent score exceeds 75</strong></div></div><div class="flow-line"></div><div class="flow-step ai"><span>✦</span><div><small>MOMENTUM AI</small><strong>Generate account brief</strong></div></div><div class="flow-line"></div><div class="flow-step action"><span>↗</span><div><small>THEN</small><strong>Create owner task + draft email</strong></div></div><button class="dark-btn wide" id="run-workflow">Run test <span>→</span></button></aside></div></section>
+      <section id="insights-view" class="view"><div class="section-heading"><div><p class="eyebrow">CONVERSATION INTELLIGENCE</p><h2>What your buyers are really telling you</h2><p>Signals synthesized from meeting notes and customer activity.</p></div></div><div class="insight-cards"><article class="panel transcript"><span class="call-badge">● Call completed · 43 min</span><h3>Northstar Health — technical alignment</h3><blockquote>“If we can have a rollout path by September, I can bring this to the steering committee.”</blockquote><div class="signal-callout"><span>✦</span><div><strong>Buying signal detected</strong><p>Timeline, executive process, and a clear next step were identified.</p></div><button id="draft-from-call">Draft follow-up</button></div></article><article class="panel insight-summary"><span class="eyebrow">AI SUMMARY</span><h3>Momentum recommends</h3><ol><li>Confirm the September rollout criteria.</li><li>Send a tailored security overview to Jon.</li><li>Book a steering committee prep session.</li></ol><button class="dark-btn" id="draft-email-2">Create action plan <span>✦</span></button></article></div></section>
+      <section id="analytics-view" class="view"><div class="section-heading"><div><p class="eyebrow">PERFORMANCE</p><h2>Revenue execution, made visible</h2><p>Prototype analytics using simulated workspace activity.</p></div></div><div class="analytics-cards"><article class="panel stat-large"><span class="eyebrow">AI-ASSISTED PIPELINE</span><strong>$482,400</strong><p>18.6% higher than the previous period</p><div class="bar"><i style="width:76%"></i></div></article><article class="panel stat-large"><span class="eyebrow">AVERAGE RESPONSE RATE</span><strong>31.8%</strong><p>6.2 points above your baseline</p><div class="bar green"><i style="width:64%"></i></div></article><article class="panel stat-large"><span class="eyebrow">TASK COMPLETION</span><strong>92%</strong><p>186 high-value actions completed</p><div class="bar orange"><i style="width:92%"></i></div></article></div></section>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="composer-modal" aria-hidden="true"><section class="composer" role="dialog" aria-modal="true" aria-labelledby="composer-title"><button class="modal-close" id="compose-close" aria-label="Close">×</button><span class="eyebrow">MOMENTUM AI COMPOSER</span><h2 id="composer-title">A sharper follow-up, grounded in context</h2><div class="context-box"><span class="account-logo blue">NH</span><span><strong>Northstar Health</strong><small>Based on pricing engagement, call insight, and deal stage</small></span><span class="context-score">86 intent</span></div><label>To<input value="Maya Chen · VP, Operations" /></label><label>Subject<input id="email-subject" value="A practical next step for Northstar Health" /></label><label>Message<textarea id="email-body">Hi Maya,
+
+I noticed the team's focus on a September rollout. Momentum can help you turn that target into a clear execution plan, without adding another tool for your reps.
+
+Would a 15-minute working session next week be useful?
+
+Best,
+Alex</textarea></label><div class="composer-actions"><button class="outline-btn" id="regenerate">✦ Regenerate</button><button class="primary-btn" id="send-email">Queue for review <span>→</span></button></div></section></div>
+  <div class="toast" id="toast"></div>
+  <script src="browser-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
